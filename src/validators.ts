@@ -7,8 +7,7 @@
  */
 
 import { InjectionToken, isObservable, isPromise } from './shims/'
-import { Observable, forkJoin, from } from 'rxjs'
-import { map } from 'rxjs/operators'
+import { Observable } from 'rxjs'
 import { AsyncValidatorFn, ValidationErrors, Validator, ValidatorFn } from './directives/validators'
 import { AbstractControl, FormControl } from './model'
 
@@ -365,7 +364,7 @@ export class Validators {
 
     return function(control: AbstractControl) {
       const observables = _executeAsyncValidators(control, presentValidators).map(toObservable)
-      return forkJoin(observables).pipe(map(_mergeErrors))
+      return Observable.forkJoin(observables).map(_mergeErrors)
     }
   }
 }
@@ -375,7 +374,7 @@ function isPresent(o: any): boolean {
 }
 
 export function toObservable(r: any): Observable<any> {
-  const obs = isPromise(r) ? from(r) : r
+  const obs = isPromise(r) ? Observable.from(r) : r
   if (!isObservable(obs)) {
     throw new Error(`Expected validator to return Promise or Observable.`)
   }

@@ -6,9 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import { Directive, Inject, Optional, forwardRef } from 'ng-metadata/core'
-import { ElementRef, Renderer2 } from '../shims'
-import { ɵgetDOM as getDOM } from 'ng-metadata/platform-browser'
+import { Directive, Optional, Inject } from 'ng-metadata/core'
+import { ElementRef, Renderer2, getDOM, InjectionToken, forwardRef } from '../shims'
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from './control_value_accessor'
 
 export const DEFAULT_VALUE_ACCESSOR: any = {

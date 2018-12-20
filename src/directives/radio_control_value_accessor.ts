@@ -6,16 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {
-  Directive,
-  Injectable,
-  Injector,
-  Input,
-  OnDestroy,
-  OnInit,
-  forwardRef
-} from 'ng-metadata/core'
-import { ElementRef, Renderer2 } from '../shims'
+import { Directive, Injectable, Input, OnDestroy, OnInit, forwardRef } from 'ng-metadata/core'
+import { ElementRef, Renderer2, Injector } from '../shims'
 
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from './control_value_accessor'
 import { NgControl } from './ng_control'
