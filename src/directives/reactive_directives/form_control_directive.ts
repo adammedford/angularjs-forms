@@ -15,9 +15,10 @@ import {
   Optional,
   Output,
   Self,
-  SimpleChanges,
-  forwardRef
+  SimpleChanges
 } from 'ng-metadata/core'
+
+import { forwardRef } from '../../shims/'
 
 import { FormControl } from '../../model'
 import { NG_ASYNC_VALIDATORS, NG_VALIDATORS } from '../../validators'

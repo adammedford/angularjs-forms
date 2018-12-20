@@ -6,8 +6,8 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import { Directive, forwardRef } from 'ng-metadata/core'
-import { ElementRef, Renderer2 } from '../shims/'
+import { Directive } from 'ng-metadata/core'
+import { ElementRef, Renderer2, forwardRef } from '../shims/'
 
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from './control_value_accessor'
 
